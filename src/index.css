@@ -72,6 +72,19 @@
   .transition-base {
     @apply transition-all duration-200 ease-in-out;
   }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Dark mode support */
@@ -81,4 +94,9 @@
 
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
   @apply text-white;
+}
+
+/* Smooth theme transitions */
+* {
+  transition: background-color 300ms ease, border-color 300ms ease, color 300ms ease, fill 300ms ease;
 }
