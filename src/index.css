@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * =============================================================================
+ * VITE + REACT + TAILWIND CSS TEMPLATE
+ * =============================================================================
+ *
+ * STYLING GUIDE FOR AI:
+ * ---------------------
+ * 1. USE TAILWIND CLASSES FIRST: Always prefer Tailwind utility classes in JSX
+ *    Example: <div className="flex items-center justify-between p-4 bg-gray-100">
+ *
+ * 2. CUSTOM CSS HERE: Only add custom styles to this file when:
+ *    - You need complex animations not available in Tailwind
+ *    - You need CSS variables for theming
+ *    - You need styles that can't be expressed with utilities
+ *
+ * 3. AVAILABLE CUSTOM COLORS (in tailwind.config.js):
+ *    - brand-dark: #181818 (dark backgrounds, text)
+ *    - brand-light: #fafafa (light backgrounds)
+ *    - brand-gray: #6b7280 (secondary text)
+ *    - brand-accent: #3b82f6 (primary accent - blue)
+ *    - brand-success: #10b981 (success states - green)
+ *    - brand-warning: #f59e0b (warning states - amber)
+ *    - brand-error: #ef4444 (error states - red)
+ *
+ * 4. FONTS:
+ *    - font-sans: Inter (default body text)
+ *    - font-heading: Inter with font-semibold or font-bold
+ *
+ * =============================================================================
+ */
+
+/* Base layer customizations */
+@layer base {
+  body {
+    @apply bg-white text-gray-900 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-gray-900;
+  }
+
+  a {
+    @apply text-brand-accent hover:text-blue-700 transition-colors;
+  }
+}
+
+/* Component layer - reusable component styles */
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-brand-accent text-white rounded-lg hover:bg-blue-700 transition-colors font-medium;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-gray-200 text-gray-900 rounded-lg hover:bg-gray-300 transition-colors font-medium;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent;
+  }
+}
+
+/* Utilities layer - custom utilities */
+@layer utilities {
+  .transition-base {
+    @apply transition-all duration-200 ease-in-out;
+  }
+}
+
+/* Dark mode support */
+.dark body {
+  @apply bg-brand-dark text-white;
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  @apply text-white;
+}
